@@ -14,7 +14,7 @@ const ACCEPTED_MIME = new Set([
 ]);
 
 const ACCEPTED_EXT = '.jpg,.jpeg,.png,.webp,.heic,.heif,.bmp,.tiff,.tif';
-const MAX_BYTES    = 5 * 1024 * 1024; // 5 MB
+const MAX_BYTES    = 10 * 1024 * 1024; // 10 MB
 
 /* ── Validation ───────────────────────────────────────────────── */
 function validate(file) {
@@ -25,7 +25,7 @@ function validate(file) {
     return 'Desteklenmeyen dosya formatı. JPG, PNG, WebP, HEIC, BMP veya TIFF yükleyin.';
   }
   if (file.size > MAX_BYTES) {
-    return `Dosya boyutu çok büyük. Maksimum 5 MB kabul edilir (${(file.size / 1024 / 1024).toFixed(1)} MB yüklendi).`;
+    return `Dosya boyutu çok büyük. Maksimum 10 MB kabul edilir (${(file.size / 1024 / 1024).toFixed(1)} MB yüklendi).`;
   }
   return null;
 }
@@ -204,7 +204,7 @@ const UploadBox = ({ onFileSelect, disabled = false, currentFile }) => {
                   {isDrag ? 'Görseli bırakın…' : 'Sürükleyin veya seçin'}
                 </p>
                 <p className="dz-sub">
-                  JPG, PNG, WebP, HEIC, BMP, TIFF &bull; Maks 5 MB
+                  JPG, PNG, WebP, HEIC, BMP, TIFF &bull; Maks 10 MB
                 </p>
               </div>
 
